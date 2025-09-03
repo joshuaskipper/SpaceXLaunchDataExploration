@@ -23,14 +23,17 @@ namespace SpaceXLaunchDataExploration
 
                 if (response.IsSuccessStatusCode) 
                 {
+
+                    //-Do this so that you dont have to worry about case sensitivity
                     var option = new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true,
                     };
+                    //-end
 
                     var json = await response.Content.ReadAsStringAsync();
 
-                    var launchJson = JsonSerializer.Deserialize<List<Root>>(json);
+                    var launchJson = JsonSerializer.Deserialize<List<Root>>(json, option);//Added the option here for case sensitivity
 
                     /*
                     foreach (var item in launchJson)
