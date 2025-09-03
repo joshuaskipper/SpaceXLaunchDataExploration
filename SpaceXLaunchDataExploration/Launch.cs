@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SpaceXLaunchDataExploration
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
+    //remove some of the unused class fields
+    
     public class Core
     {
         public string core { get; set; }
